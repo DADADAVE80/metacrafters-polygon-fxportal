@@ -3,7 +3,7 @@ pragma solidity ^0.8.4;
 
 import "erc721a/contracts/ERC721A.sol";
 
-contract MetaToken is ERC721A {
+contract MetaTokenNFT is ERC721A {
     constructor() ERC721A("MetaToken", "MTA") {}
 
 

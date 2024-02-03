@@ -6,7 +6,6 @@ import "erc721a/contracts/ERC721A.sol";
 contract MetaTokenNFT is ERC721A {
     constructor() ERC721A("MetaToken", "MTA") {}
 
-
     function mint(uint256 _quantity) external payable {
         _mint(msg.sender, _quantity);
     }

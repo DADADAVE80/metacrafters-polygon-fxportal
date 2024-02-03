@@ -1,8 +1,10 @@
 const hre = require("hardhat");
 
 async function main() {
-    const metatokennft = await hre.ethers.deployContract("MetaToken");
-    console.log("MetaToken NFT deployed to: ", NFTa.address);
+    const metaTokenNft = await hre.ethers.deployContract("MetaTokenNFT");
+    
+    
+    console.log(`MetaToken NFT deployed to: ${metaTokenNft.target}`);
 }
 
 main().catch(error => {

@@ -1,16 +1,42 @@
-# ERC20 Goerli to Mumbai Bridge Using fxPortal
-This project demonstrates how to use the fxPortal contracts to transfer ERC20 tokens from Goerli to Mumbai.
+# Hello World
 
-### Steps for Bridging
+This Solidity program is a simple "Hello World" program that demonstrates the basic syntax and functionality of the Solidity programming language. The purpose of this program is to serve as a starting point for those who are new to Solidity and want to get a feel for how it works.
 
-1. Run npm i to install dependencies
-2. Put your private key in the .env.examples file and rename to .env when finished
-3. Run npx hardhat run scripts/deploy.js --network goerli to deploy ERC20 contract
-4. Paste the newly deployed contract address in the tokenAddress variable for the other scripts
-5. Make sure to fill in your public key
-6. Run npx hardhat run scripts/mint.js --network goerli to mint tokens to your wallet
-7. Run npx hardhat run scripts/approveDeposit.js --network goerli to approve and deposit your tokens to polygon
-8. Wait 20-30ish minutes for tokens to show on polygon account
-9. Use polyscan.com to check your account for the tokens. Once they arrive, you can click on the transaction to get the contract address for polygon.
-10. Use this polygon contract address for your getBalance script's tokenAddress
-11. Run npx hardhat run scripts/getBalance.js --network mumbai to see the new polygon balance
+## Description
+
+This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The contract has a single function that returns the string "Hello World!". This program serves as a simple and straightforward introduction to Solidity programming, and can be used as a stepping stone for more complex projects in the future.
+
+## Getting Started
+
+### Executing program
+
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
+
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the following code into the file:
+
+```javascript
+pragma solidity ^0.8.4;
+
+contract HelloWorld {
+    function sayHello() public pure returns (string memory) {
+        return "Hello World!";
+    }
+}
+
+```
+
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
+
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "HelloWorld" contract from the dropdown menu, and then click on the "Deploy" button.
+
+Once the contract is deployed, you can interact with it by calling the sayHello function. Click on the "HelloWorld" contract in the left-hand sidebar, and then click on the "sayHello" function. Finally, click on the "transact" button to execute the function and retrieve the "Hello World!" message.
+
+## Authors
+
+Metacrafter Chris  
+[@metacraftersio](https://twitter.com/metacraftersio)
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details

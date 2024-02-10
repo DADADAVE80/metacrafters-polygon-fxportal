@@ -12,6 +12,6 @@ contract MetaToken is ERC20, Ownable {
     }
 
     function decimals() public pure override returns (uint8) {
-		return 0;
-	}
+        return 0;
+    }
 }

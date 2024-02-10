@@ -1,17 +1,23 @@
 // SPDX-License-Identifier: UNLICENSED 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.20;
 
 import "erc721a/contracts/ERC721A.sol";
 
 contract MetaTokenNFT is ERC721A {
-    constructor() ERC721A("MetaToken", "MTA") {}
+    uint8 public maxSupply = 5;
 
-    function mint(uint256 _quantity) external payable {
-        _mint(msg.sender, _quantity);
+    constructor() ERC721A("MetaToken", "MTS") {}
+
+    function safeMint(uint8 _quantity) external payable {
+        _safeMint(msg.sender, _quantity);
     }
 
-    function promptDescription() public pure returns (string memory) {
-        return "NFT art collection of skyscrapers, each with a different artistic style and angle";
+    function _baseURI() internal pure override returns (string memory) {
+        return "ipfs://QmQJFVxUMafQfRkBNvLbeMRQeG79NuuVdqwMNsxnA2mCTn/";
+    }
+
+    function promptDescription() external pure returns (string memory) {
+        return "NFT collection of skyscrapers, each with a different artistic style and angle";
     }
 
     function balanceOf(address owner) public view override returns (uint256) {

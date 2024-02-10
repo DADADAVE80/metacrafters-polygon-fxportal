@@ -35,7 +35,11 @@ npm install
 
 ---
 First compile the contract using `npx hardhat compile` then deploy the contract onto
-Goerli Ethereum testnet
+Goerli Ethereum testnet using the following command:
+```shell
+npx hardhat run --network goerli scripts/nft/deploy.js
+```
+Then you get a 
 
 ## Author
 

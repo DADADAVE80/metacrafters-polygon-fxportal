@@ -34,19 +34,44 @@ npm install
 ## Configuration
 
 ---
+### Deploy contract
 First compile the contract using `npx hardhat compile` then deploy the contract onto
 Goerli Ethereum testnet using the following command:
 ```shell
 npx hardhat run --network goerli scripts/nft/deploy.js
 ```
-Then you get a 
+
+Then, if everything is set up right, you get a console response like this:
+```
+MetaToken NFT deployed to: <CONTRACT-ADDRESS>
+```
+### Batch mint NFTs
+To batch mint NFTs to the deployed contract, update the contract address in the
+`.env.example.` file and rename the file to `.env`. Also, subsequently update
+the required variables in the `.env` file.  
+
+Then run the `batchMint.js` script with this hardhat command:
+```shell
+npx hardhat run --network goerli scripts/nft/batchMint.js
+```
+The response log will look like:
+```
+Successfully minted: <number> MetaToken NFTs to <WALLET-ADDRESS>
+```
+### Approve transfer and deposit the NFTs to Polygon bridge
+Pass in the Polygon Mumbai bridged address of your contract to `BRIDGE-ADDRESS` in
+`.env`, then run the `approveTransfer.js` script with hardhat:
+```shell
+npx hardhat run --network goerli scripts/nft/approveTransfer.js
+```
+The response should look like this:
+```
+NFT approval confirmed
+NFT deposited on Polygon Mumbai
+```
+
 
 ## Author
 
 David Dada 
 [@DadaAyo5](https://twitter.com/DadaAyo5)
-
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details

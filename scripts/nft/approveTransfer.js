@@ -28,7 +28,7 @@ async function main() {
 
   console.log("NFT approval confirmed");
 
-  // Deploy NFTs to bridge
+  // Deposit NFTs to Polygon Mumbai bridge
   for (let i = 0; i < 5; i++) {
     const depositTx = await fxRootContract
       .connect(deployer)
